@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // Aqui empieza crear documentos
 public class AdministracionDeDocumentos {
-    public void crearDocumento() {
+    public Documento crearDocumento() {
         Scanner scanner = new Scanner(System.in);
 
         // Solicitar información al usuario
@@ -52,6 +52,7 @@ public class AdministracionDeDocumentos {
         );
 
         System.out.println("Documento creado: " + nuevoDocumento.getNombre());
+        return nuevoDocumento;
         
     }
 
