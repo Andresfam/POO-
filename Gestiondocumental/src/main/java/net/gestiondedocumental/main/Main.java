@@ -10,7 +10,5 @@ package net.gestiondedocumental.main;
  */
 public class Main {
     public static void main(String[] args) {
-        Encriptar encriptar = new Encriptar();
-        System.out.println(encriptar.encrypt(encriptar.password));
     }
 }
