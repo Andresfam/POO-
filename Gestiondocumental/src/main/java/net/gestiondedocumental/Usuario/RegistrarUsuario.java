@@ -7,7 +7,7 @@ public class RegistrarUsuario {
     private static Scanner scanner = new Scanner(System.in);
     private static HashMap<String, Usuario> usuariosRegistrados = new HashMap<>(); 
 
-    public static void registrar() {
+    public static Usuario registrar() {
         System.out.println("\nREGISTRO DE USUARIO");
 
         System.out.print("Nombre completo: ");
@@ -39,9 +39,9 @@ public class RegistrarUsuario {
 
         // Crear y registrar el nuevo usuario
         Usuario nuevoUsuario = new Usuario(nombre, edad, correo, celular, nombreUsuario, contrasena);
-        usuariosRegistrados.put(nombreUsuario, nuevoUsuario);  // Guardar el usuario en el HashMap
-        
+        usuariosRegistrados.put(nombreUsuario, nuevoUsuario);
         System.out.println("Usuario registrado exitosamente.");
+        return nuevoUsuario;
     }
 
     // Método para validar si un usuario ya existe y si la contraseña coincide
@@ -57,4 +57,11 @@ public class RegistrarUsuario {
     public static boolean existeUsuario(String nombreUsuario) {
         return usuariosRegistrados.containsKey(nombreUsuario);
     }
+    
+    public static Usuario obtenerUsuario(String nombreUsuario) {
+    return usuariosRegistrados.get(nombreUsuario);  // Retorna el objeto Usuario registrado
+}
+
+    
+    
 }
