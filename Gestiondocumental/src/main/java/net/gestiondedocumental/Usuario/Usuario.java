@@ -1,3 +1,4 @@
+package net.gestiondedocumental.Usuario;
 public class Usuario {
     private String nombreCompleto;
     private int edad;

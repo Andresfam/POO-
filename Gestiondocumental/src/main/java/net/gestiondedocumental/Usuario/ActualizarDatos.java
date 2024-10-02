@@ -1,3 +1,5 @@
+package net.gestiondedocumental.Usuario;
+
 import java.util.Scanner;
 
 public class ActualizarDatos {
