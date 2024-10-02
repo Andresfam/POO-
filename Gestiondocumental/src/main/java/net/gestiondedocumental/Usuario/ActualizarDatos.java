@@ -15,5 +15,5 @@ public class ActualizarDatos {
 
         System.out.println("Datos actualizados exitosamente.");
     }
-}//esta huevada me dio paja extenderla, entonces XD
+}
 
