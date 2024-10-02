@@ -1,6 +1,8 @@
 package net.gestiondedocumental.main;
 
 import java.util.Scanner;
+import java.util.List;
+import java.util.Iterator;
 
 // Aqui empieza crear documentos
 public class AdministracionDeDocumentos {
@@ -145,6 +147,19 @@ public class AdministracionDeDocumentos {
         }
 
         System.out.println("Los datos del documento han sido actualizados.");
+    }
+        public boolean eliminarDocumento(List<Documento> documentos, String isbn) {
+        Iterator<Documento> iterator = documentos.iterator();
+        while (iterator.hasNext()) {
+            Documento doc = iterator.next();
+            if (doc.getIsbn().equals(isbn)) {
+                iterator.remove();
+                System.out.println("Documento con ISBN " + isbn + " ha sido eliminado.");
+                return true;
+            }
+        }
+        System.out.println("No se encontró un documento con ISBN " + isbn);
+        return false;
     }
 }
 

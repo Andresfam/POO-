@@ -16,17 +16,16 @@ public class Main {
             System.out.println("1. Crear Documento");
             System.out.println("2. Editar Documento");
             System.out.println("3. Ver Todos los Documentos");
-            System.out.println("4. Salir");
+            System.out.println("4. Eliminar documentos");
+            System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
             scanner.nextLine(); // Limpiar el buffer
 
             switch (opcion) {
                 case 1:
-                    admin.crearDocumento();
-                    // Suponiendo que el método 'crearDocumento' devuelve un objeto Documento
                     Documento nuevoDocumento = admin.crearDocumento();
-                    documentos.add(nuevoDocumento); // Agregar el nuevo documento a la lista
+                    documentos.add(nuevoDocumento); 
                     break;
                 case 2:
                     if (!documentos.isEmpty()) {
@@ -68,6 +67,26 @@ public class Main {
                     }
                     break;
                 case 4:
+                    System.out.print("Ingrese el ISBN del documento que desea eliminar: ");
+                    String isbn = scanner.nextLine();
+                    boolean encontrado = false;
+                    for (Documento doc : documentos) {
+                        if (doc.getIsbn().equals(isbn)) {
+                            System.out.println("Documento encontrado: " + doc.getNombre());
+                            System.out.print("¿Desea eliminar este documento? (s/n): ");
+                            String respuesta = scanner.nextLine();
+                            if (respuesta.equalsIgnoreCase("s")) {
+                               admin.eliminarDocumento(documentos, isbn);
+                            }
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                    if (!encontrado) {
+                        System.out.println("No se encontró ningún documento con ese ISBN.");
+                    }
+                    break;
+                case 5:
                     System.out.println("Saliendo del programa...");
                     return;
                 default:
