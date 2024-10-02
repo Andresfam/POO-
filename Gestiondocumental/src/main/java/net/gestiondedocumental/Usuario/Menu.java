@@ -11,18 +11,20 @@ public class Menu {
             System.out.println("1. Registrar Usuario");
             System.out.println("2. Ingresar");
             System.out.println("3. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
             opcion = scanner.nextInt();
             scanner.nextLine();  // Limpiar buffer
 
             switch(opcion) {
                 case 1:
                     RegistrarUsuario.registrar();
+                    subMenu();
                     break;
                 case 2:
-                    if (IngresarUsuario.ingresar()) {
-                        subMenu();
+                    while (!IngresarUsuario.ingresar()) {
+                        System.out.println("Inténtelo de nuevo.");
                     }
+                    subMenu();
                     break;
                 case 3:
                     System.out.println("Saliendo del sistema...");
