@@ -216,9 +216,9 @@ public class Menu {
                 if (!historicoVentas.isEmpty()) {
                 System.out.println("===== Histórico de Ventas =====");
                 for (Venta venta : historicoVentas) {
-                System.out.println(venta.getNombreUsuario() + " compró '" + venta.getNombreLibro() + 
-                    "' a " + venta.getCantidadComprada() + " unidades con un valor de " + 
-                    venta.getPrecioIndividual() + ", dando un total de " + venta.getTotal() + ".");
+                System.out.println("El usuario"+venta.getNombreUsuario() + " compró '"+ venta.getCantidadComprada() + "unidades de"
+                        + venta.getNombreLibro() + "' a un precio de " + venta.getPrecioIndividual()+
+                        ", dando un total de " + venta.getTotal() + ".");
                 }
                 } else {
                     System.out.println("No hay ventas registradas.");
