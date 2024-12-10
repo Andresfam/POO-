@@ -11,8 +11,10 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author lll
  */
 public class Encriptar {
-    public String password = "hola mundo";
     public String encrypt(String pw){
         return BCrypt.hashpw(pw, BCrypt.gensalt());
+    }
+    public Boolean compare(String pw, String h){
+        return BCrypt.checkpw(pw, h);
     }
 }
