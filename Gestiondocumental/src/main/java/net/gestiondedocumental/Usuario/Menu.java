@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Scanner;
 import net.gestiondedocumental.main.AdministracionDeDocumentos;
 import net.gestiondedocumental.main.Documento;
+import net.gestiondedocumental.main.Venta;
 
 public class Menu {
-    private static List<Documento> documentos = new ArrayList<>();  
+    private static List<Documento> documentos = new ArrayList<>();
+    private static List<Venta> historicoVentas = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -46,11 +48,11 @@ public class Menu {
         if (usuario.getTipoDeUsuario().equalsIgnoreCase("Administrador")) {
             mostrarSubMenuAdministrador();
         } else {
-            mostrarSubMenuUsuario();
+            mostrarSubMenuUsuario(usuario);
         }
     }
 
-    private static void mostrarSubMenuUsuario() {
+    private static void mostrarSubMenuUsuario(Usuario usuario) {
     Scanner scanner = new Scanner(System.in);
     int opcion;
 
@@ -79,42 +81,50 @@ public class Menu {
                 break;
 
             case 2:
-                // Comprar libros
-                if (!documentos.isEmpty()) {
-                    System.out.println("Seleccione el libro que desea comprar:");
-                    System.out.println("0.Volver al menu");
-                    for (int i = 0; i < documentos.size(); i++) {
-                        System.out.println((i + 1) + ". " + documentos.get(i).getNombre() + " (Cantidad disponible: " + documentos.get(i).getCantidadDisponible() + ")");
-                    }
-                    int libroSeleccionado = scanner.nextInt() - 1;
-                    scanner.nextLine();
-                    
-                    if (libroSeleccionado == -1) { // El usuario ingresó 0, regresa al menú
-                        System.out.println("Regresando al menú anterior...");
-                        break; // Salimos del case para volver al menú principal
-                    }
+            // Comprar libros
+            if (!documentos.isEmpty()) {
+            System.out.println("Seleccione el libro que desea comprar (digite 0 para volver al menú anterior):");
+            for (int i = 0; i < documentos.size(); i++) {
+                System.out.println((i + 1) + ". " + documentos.get(i).getNombre() + " (Cantidad disponible: " + documentos.get(i).getCantidadDisponible() + ")");
+            }
+            int libroSeleccionado = scanner.nextInt() - 1;
+            scanner.nextLine();
 
-                    if (libroSeleccionado >= 0 && libroSeleccionado < documentos.size()) {
-                        Documento libro = documentos.get(libroSeleccionado);
-
-                        System.out.print("Ingrese la cantidad que desea comprar: ");
-                        int cantidad = scanner.nextInt();
-                        scanner.nextLine();
-
-                        if (cantidad > 0 && cantidad <= libro.getCantidadDisponible()) {
-                            // Reducir la cantidad disponible
-                            libro.setCantidadDisponible(libro.getCantidadDisponible() - cantidad);
-                            System.out.println("Compra realizada exitosamente. Ahora hay " + libro.getCantidadDisponible() + " unidades disponibles de '" + libro.getNombre() + "'.");
-                        } else {
-                            System.out.println("Cantidad no válida o insuficiente en inventario.");
-                        }
-                    } else {
-                        System.out.println("Opción no válida.");
-                    }
-                } else {
-                    System.out.println("No hay libros disponibles para comprar.");
-                }
+            if (libroSeleccionado == -1) { // El usuario ingresó 0, regresa al menú
+                System.out.println("Regresando al menú anterior...");
                 break;
+            }
+
+            if (libroSeleccionado >= 0 && libroSeleccionado < documentos.size()) {
+                Documento libro = documentos.get(libroSeleccionado);
+
+                System.out.print("Ingrese la cantidad que desea comprar: ");
+                int cantidad = scanner.nextInt();
+                scanner.nextLine();
+
+                if (cantidad > 0 && cantidad <= libro.getCantidadDisponible()) {
+                    // Reducir la cantidad disponible
+                    libro.setCantidadDisponible(libro.getCantidadDisponible() - cantidad);
+                    double precioUnitario = libro.getPrecio();
+                    double total = precioUnitario * cantidad;
+
+                    // Registrar la venta en el histórico
+                    
+                    historicoVentas.add(new Venta(usuario.getNombreCompleto(), libro.getNombre(), cantidad, precioUnitario));
+
+                    System.out.println("Compra realizada exitosamente. Ahora hay " + libro.getCantidadDisponible() + " unidades disponibles de '" + libro.getNombre() + "'.");
+                    System.out.println("Total de la compra: " + total);
+                } else {
+                    System.out.println("Cantidad no válida o insuficiente en inventario.");
+                }
+            } else {
+                System.out.println("Opción no válida.");
+            }
+            } else {
+            System.out.println("No hay libros disponibles para comprar.");
+            }
+            break;
+
 
             case 3:
                 System.out.println("Sesión cerrada.");
@@ -138,7 +148,8 @@ public class Menu {
         System.out.println("2. Editar Documento");
         System.out.println("3. Ver Todos los Documentos");
         System.out.println("4. Eliminar Documento");
-        System.out.println("5. Cerrar Sesión");
+        System.out.println("5. Historico de ventas");
+        System.out.println("6. Cerrar Sesión");
         System.out.print("Seleccione una opcion: ");
         opcion = scanner.nextInt();
         scanner.nextLine(); // Limpiar buffer
@@ -200,14 +211,27 @@ public class Menu {
                     System.out.println("No se encontró un documento con ese ISBN.");
                 }
                 break;
-
-            case 5:
+                
+            case 5: // Nueva opción para ver el histórico de ventas
+                if (!historicoVentas.isEmpty()) {
+                System.out.println("===== Histórico de Ventas =====");
+                for (Venta venta : historicoVentas) {
+                System.out.println(venta.getNombreUsuario() + " compró '" + venta.getNombreLibro() + 
+                    "' a " + venta.getCantidadComprada() + " unidades con un valor de " + 
+                    venta.getPrecioIndividual() + ", dando un total de " + venta.getTotal() + ".");
+                }
+                } else {
+                    System.out.println("No hay ventas registradas.");
+                }
+                break;
+                
+            case 6:
                 System.out.println("Sesión cerrada.");
                 break;
 
             default:
                 System.out.println("Opción no válida, intente nuevamente.");
             }
-        } while (opcion != 5);
+        } while (opcion != 6);
     }
 }
