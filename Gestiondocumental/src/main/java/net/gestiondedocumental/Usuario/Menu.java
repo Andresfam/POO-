@@ -16,7 +16,7 @@ public class Menu {
 
         do {
             System.out.println("MENU PRINCIPAL");
-            System.out.println("1. Registrar Usuario");
+            System.out.println("1. Registrar");
             System.out.println("2. Ingresar");
             System.out.println("3. Salir");
             System.out.print("Seleccione una opcion: ");
