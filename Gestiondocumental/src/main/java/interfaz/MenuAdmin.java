@@ -28,8 +28,6 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         Configuracion = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         Cerrarsesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -47,21 +45,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(245, 134, 52));
 
-        jButton1.setText("Crear");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Editar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Eliminar");
+        jButton4.setText("Configurar Libros");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -86,33 +70,26 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(Cerrarsesion, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(223, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(184, 184, 184))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))
-                        .addGap(295, 295, 295))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Cerrarsesion, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(233, 233, 233))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
-                .addComponent(jButton1)
-                .addGap(35, 35, 35)
-                .addComponent(jButton2)
-                .addGap(41, 41, 41)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addGap(68, 68, 68)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                 .addComponent(Cerrarsesion)
                 .addGap(17, 17, 17))
         );
@@ -131,18 +108,6 @@ public class MenuAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-this.dispose();
-Crearlibro objcrearlibro = new Crearlibro();
-objcrearlibro.setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     this.dispose();
-Editarlibro objeditarlibro = new Editarlibro();
-objeditarlibro.setVisible(true);    // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void CerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarsesionActionPerformed
 
       this.dispose();
@@ -156,9 +121,9 @@ objeditarlibro.setVisible(true);    // TODO add your handling code here:
     }//GEN-LAST:event_ConfiguracionActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-     this.dispose();
-Eliminarlibro objeliminarlibro = new Eliminarlibro();
-objeliminarlibro.setVisible(true);    // TODO add your handling code here:
+        this.dispose();
+        Configurarlibro objeliminarlibro = new Configurarlibro();
+        objeliminarlibro.setVisible(true);    // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -199,8 +164,6 @@ objeliminarlibro.setVisible(true);    // TODO add your handling code here:
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cerrarsesion;
     private javax.swing.JButton Configuracion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
