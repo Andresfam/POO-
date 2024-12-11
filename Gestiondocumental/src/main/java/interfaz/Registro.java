@@ -44,6 +44,7 @@ public class Registro extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("REGISTRO DE USUARIOS");
 
+        Edadusuario.setBackground(new java.awt.Color(51, 51, 51));
         Edadusuario.setForeground(new java.awt.Color(0, 102, 102));
         Edadusuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Edad"));
         Edadusuario.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +53,7 @@ public class Registro extends javax.swing.JPanel {
             }
         });
 
+        Nicknameusuario.setBackground(new java.awt.Color(51, 51, 51));
         Nicknameusuario.setForeground(new java.awt.Color(0, 102, 102));
         Nicknameusuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre de usuario"));
         Nicknameusuario.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +62,8 @@ public class Registro extends javax.swing.JPanel {
             }
         });
 
-        Nombreusuario2.setForeground(new java.awt.Color(0, 102, 102));
+        Nombreusuario2.setBackground(new java.awt.Color(51, 51, 51));
+        Nombreusuario2.setForeground(new java.awt.Color(255, 255, 255));
         Nombreusuario2.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre"));
         Nombreusuario2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,6 +71,7 @@ public class Registro extends javax.swing.JPanel {
             }
         });
 
+        Correousuario.setBackground(new java.awt.Color(51, 51, 51));
         Correousuario.setForeground(new java.awt.Color(0, 102, 102));
         Correousuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Correo"));
         Correousuario.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +80,7 @@ public class Registro extends javax.swing.JPanel {
             }
         });
 
+        celularusuario.setBackground(new java.awt.Color(51, 51, 51));
         celularusuario.setForeground(new java.awt.Color(0, 102, 102));
         celularusuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Numero celular"));
         celularusuario.addActionListener(new java.awt.event.ActionListener() {
@@ -84,6 +89,7 @@ public class Registro extends javax.swing.JPanel {
             }
         });
 
+        passwordusuario.setBackground(new java.awt.Color(51, 51, 51));
         passwordusuario.setForeground(new java.awt.Color(0, 102, 102));
         passwordusuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Contraseña"));
         passwordusuario.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +117,7 @@ public class Registro extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(150, Short.MAX_VALUE)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(celularusuario)
@@ -126,30 +132,30 @@ public class Registro extends javax.swing.JPanel {
                         .addComponent(Confirmar)
                         .addGap(50, 50, 50)
                         .addComponent(Volver)))
-                .addGap(147, 147, 147))
+                .addGap(73, 73, 73))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(15, 15, 15)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(Nombreusuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Edadusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(Correousuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Nombreusuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(celularusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Edadusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(Correousuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(celularusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Nicknameusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(passwordusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Volver)
                     .addComponent(Confirmar))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -160,9 +166,7 @@ public class Registro extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
