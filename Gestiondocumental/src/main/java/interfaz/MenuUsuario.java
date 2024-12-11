@@ -51,11 +51,11 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(245, 134, 52));
 
-        Cerrarsesion.setBackground(new java.awt.Color(0, 153, 153));
+        Cerrarsesion.setBackground(new java.awt.Color(245, 134, 52));
         Cerrarsesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Cerrarsesion.setForeground(new java.awt.Color(204, 0, 0));
+        Cerrarsesion.setForeground(new java.awt.Color(255, 255, 255));
         Cerrarsesion.setText("Cerrar sesion");
         Cerrarsesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +63,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        Libros.setBackground(new java.awt.Color(0, 153, 153));
+        Libros.setBackground(new java.awt.Color(245, 134, 52));
         Libros.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Libros.setForeground(new java.awt.Color(255, 255, 255));
         Libros.setText("VER LIBROS");
@@ -73,7 +73,7 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        Comprar.setBackground(new java.awt.Color(0, 153, 153));
+        Comprar.setBackground(new java.awt.Color(245, 134, 52));
         Comprar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Comprar.setForeground(new java.awt.Color(255, 255, 255));
         Comprar.setText("COMPRAR LIBROS");

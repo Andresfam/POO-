@@ -4,8 +4,10 @@
  */
 package interfaz;
 
+import net.gestiondedocumental.main.LoginSystem;
 import database.UserTable;
 import java.awt.Image;
+import java.io.Console;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -94,18 +96,27 @@ public class Login extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGIN");
 
         jLabel3.setText("User");
 
         jTextField3.setToolTipText("");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Password");
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(234, 234, 234));
         jButton1.setText("Login");
         jButton1.setToolTipText("");
         jButton1.setActionCommand("");
@@ -116,8 +127,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setBackground(new java.awt.Color(234, 234, 234));
         jButton3.setText("Forgot password?");
         jButton3.setBorderPainted(false);
 
@@ -176,23 +186,37 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        UserTable db = new UserTable(); 
-        try {
-            db.getBookInfo();
-        } catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        //
-        this.setVisible(false);
-        //abre la interfaz admin haces tu condicional para que reconozca cual es cual
-        MenuAdmin objetomenuadmin= new MenuAdmin();
-        objetomenuadmin.setVisible(true);
+        String username = jTextField3.getText();
+        String password = new String(jPasswordField1.getPassword());
         
-         //abre la interfaz usuario haces tu condicional para que reconozca cual es cual
-        MenuUsuario objetomenuuser= new MenuUsuario();
-        objetomenuuser.setVisible(true);
+        if (LoginSystem.authenticate(username, password)) {
+                String role = LoginSystem.getRole(username);
+                System.out.println("Login exitoso. Rol: " + role);
+                this.setVisible(false);
+                //abre la interfaz admin haces tu condicional para que reconozca cual es cual
+                if(role.equals("admin")){
+                    System.out.println(123);
+                    MenuAdmin objetomenuadmin = new MenuAdmin();
+                    objetomenuadmin.setVisible(true);
+                }
+                //abre la interfaz usuario haces tu condicional para que reconozca cual es cual
+                else{
+                    MenuUsuario objetomenuuser= new MenuUsuario();
+                    objetomenuuser.setVisible(true);
+                }
+            } else {
+                System.out.println("Usuario o contraseña incorrectos.");
+            }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
