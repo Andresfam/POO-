@@ -10,7 +10,7 @@ public class Menu {
     private static List<Documento> documentos = new ArrayList<>();
     private static List<Venta> historicoVentas = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int opcion;
 

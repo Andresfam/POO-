@@ -17,9 +17,9 @@ public class Conexion {
     public static Connection getConnection(){
         Connection db = null;
         var base = "archivapro_db";
-        var url = "jdbc:mysql://localhost:3306/"+base;
-        var user = "root";
-        var pw = "";
+        var url = "jdbc:mysql://http://34.55.72.158/:3306/"+base;
+        var user = "user";
+        var pw = "tiTxAzhT5YSSbIIXXsDTdM3tF2mR0T5VrLY8KVSZTYGUDADgDirqNm";
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -30,7 +30,7 @@ public class Conexion {
         return db;
     }
     
-    public static void main(String[] args) throws SQLException {
+    public void main(String[] args) throws SQLException {
         var conexion = Conexion.getConnection();
         if(conexion != null){
             System.out.println("conectado exitosamente");
