@@ -30,11 +30,8 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         Cerrarsesion = new javax.swing.JButton();
-        ConfiguracionAdmin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         Configuracion.setBackground(new java.awt.Color(0, 153, 153));
@@ -64,16 +61,12 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Lista");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButton4.setText("Eliminar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButton4ActionPerformed(evt);
             }
         });
-
-        jButton4.setText("Eliminar");
-
-        jButton5.setText("Historico");
 
         Cerrarsesion.setBackground(new java.awt.Color(0, 153, 153));
         Cerrarsesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -85,14 +78,6 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        ConfiguracionAdmin.setBackground(new java.awt.Color(0, 153, 153));
-        ConfiguracionAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/engranaje.png"))); // NOI18N
-        ConfiguracionAdmin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfiguracionAdminActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("BIENVENID@ ADMINISTRAD@R");
 
@@ -101,44 +86,35 @@ public class MenuAdmin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Cerrarsesion)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(223, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(114, 114, 114))
+                        .addGap(184, 184, 184))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton5)
                             .addComponent(jButton4)
-                            .addComponent(jButton3)
                             .addComponent(jButton2)
                             .addComponent(jButton1))
-                        .addGap(220, 220, 220)))
-                .addComponent(ConfiguracionAdmin))
+                        .addGap(295, 295, 295))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(Cerrarsesion, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(ConfiguracionAdmin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Cerrarsesion))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(40, 40, 40)
                 .addComponent(jButton1)
                 .addGap(35, 35, 35)
                 .addComponent(jButton2)
-                .addGap(35, 35, 35)
-                .addComponent(jButton3)
-                .addGap(43, 43, 43)
-                .addComponent(jButton4)
                 .addGap(41, 41, 41)
-                .addComponent(jButton5)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addComponent(Cerrarsesion)
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,37 +132,34 @@ public class MenuAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+this.dispose();
+Crearlibro objcrearlibro = new Crearlibro();
+objcrearlibro.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+     this.dispose();
+Editarlibro objeditarlibro = new Editarlibro();
+objeditarlibro.setVisible(true);    // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void CerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarsesionActionPerformed
-        // TODO add your handling code here:
+
+      this.dispose();
+       
+        Login login= new Login();
+        login.setVisible(true);
     }//GEN-LAST:event_CerrarsesionActionPerformed
 
     private void ConfiguracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguracionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ConfiguracionActionPerformed
 
-    private void ConfiguracionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguracionAdminActionPerformed
-        // TODO add your handling code here:
-        ConfiguracionAdmin configuracionAdmin = new ConfiguracionAdmin(); // Crear la nueva ventana
-        // Mostrar la interfaz dentro de un JFrame
-        javax.swing.JFrame frame = new javax.swing.JFrame("Configuración");
-        frame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        frame.setResizable(false); // Deshabilitar el ajuste del tamaño
-        frame.add(configuracionAdmin); // Agregar el panel de Configuración al JFrame
-        frame.pack();
-        frame.setVisible(true);
-        this.dispose(); // Cerrar la ventana actual (MenuAdmin)
-    }//GEN-LAST:event_ConfiguracionAdminActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+     this.dispose();
+Eliminarlibro objeliminarlibro = new Eliminarlibro();
+objeliminarlibro.setVisible(true);    // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,12 +199,9 @@ public class MenuAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cerrarsesion;
     private javax.swing.JButton Configuracion;
-    private javax.swing.JButton ConfiguracionAdmin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

@@ -165,7 +165,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+       
         //create new Register instance
         Registro register = new Registro();
         register.setVisible(true);
@@ -182,6 +182,16 @@ public class Login extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //
+        this.setVisible(false);
+        //abre la interfaz admin haces tu condicional para que reconozca cual es cual
+        MenuAdmin objetomenuadmin= new MenuAdmin();
+        objetomenuadmin.setVisible(true);
+        
+         //abre la interfaz usuario haces tu condicional para que reconozca cual es cual
+        MenuUsuario objetomenuuser= new MenuUsuario();
+        objetomenuuser.setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
