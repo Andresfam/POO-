@@ -5,7 +5,6 @@
 package interfaz;
 
 import net.gestiondedocumental.main.LoginSystem;
-import database.UserTable;
 import java.awt.Image;
 import java.io.Console;
 import java.sql.SQLException;

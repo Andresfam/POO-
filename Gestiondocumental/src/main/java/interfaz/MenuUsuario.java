@@ -32,7 +32,6 @@ public class MenuUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Cerrarsesion = new javax.swing.JButton();
         Libros = new javax.swing.JButton();
-        Comprar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -73,38 +72,24 @@ public class MenuUsuario extends javax.swing.JFrame {
             }
         });
 
-        Comprar.setBackground(new java.awt.Color(245, 134, 52));
-        Comprar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        Comprar.setForeground(new java.awt.Color(255, 255, 255));
-        Comprar.setText("COMPRAR LIBROS");
-        Comprar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComprarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(265, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Comprar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Libros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(252, 252, 252))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Cerrarsesion)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 604, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Libros, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(253, 253, 253))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(142, 142, 142)
                 .addComponent(Libros)
-                .addGap(68, 68, 68)
-                .addComponent(Comprar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
                 .addComponent(Cerrarsesion))
         );
 
@@ -128,12 +113,6 @@ verlibro objverlibro = new verlibro();
 objverlibro.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_LibrosActionPerformed
-
-    private void ComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprarActionPerformed
-        this.dispose();
-        comprarlibro objcomprarlibro = new comprarlibro();
-        objcomprarlibro.setVisible(true);  // TODO add your handling code here:
-    }//GEN-LAST:event_ComprarActionPerformed
 
     private void CerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarsesionActionPerformed
         this.dispose();
@@ -182,7 +161,6 @@ objverlibro.setVisible(true);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cerrarsesion;
-    private javax.swing.JButton Comprar;
     private javax.swing.JButton Libros;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

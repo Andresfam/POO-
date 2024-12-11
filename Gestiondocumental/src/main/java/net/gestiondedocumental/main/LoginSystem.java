@@ -48,4 +48,23 @@ public class LoginSystem {
         }
         return null; // Devuelve null si no encuentra el usuario
     }
+    
+    public static boolean addUser(String username, String password, String role) {
+        String query = "INSERT INTO user_account (user, password, roles) VALUES (?, ?, ?)";
+
+        try (Connection conn = Conexion.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            stmt.setString(3, role);
+
+            return stmt.executeUpdate() > 0; // Retorna true si la inserción fue exitosa
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false; // Retorna false si ocurre un error
+        }
+    }
+    
 }
+
