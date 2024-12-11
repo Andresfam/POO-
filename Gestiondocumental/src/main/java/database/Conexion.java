@@ -16,8 +16,8 @@ import java.sql.Statement;
 public class Conexion {
     public static Connection getConnection(){
         Connection db = null;
-        var base = "archivapro_db";
-        var url = "jdbc:mysql://http://34.55.72.158/:3306/"+base;
+        var base = "ARCHIVAPRO_DB";
+        var url = "jdbc:mysql://34.55.72.158:3306/ARCHIVAPRO_DB";
         var user = "user";
         var pw = "tiTxAzhT5YSSbIIXXsDTdM3tF2mR0T5VrLY8KVSZTYGUDADgDirqNm";
         
