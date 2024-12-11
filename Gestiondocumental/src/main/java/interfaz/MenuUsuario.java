@@ -28,6 +28,7 @@ public class MenuUsuario extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Configuracion = new javax.swing.JButton();
         Cerrarsesion = new javax.swing.JButton();
@@ -46,6 +47,8 @@ public class MenuUsuario extends javax.swing.JFrame {
         );
 
         jButton1.setText("jButton1");
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,8 +148,9 @@ public class MenuUsuario extends javax.swing.JFrame {
         // Mostrar la interfaz dentro de un JFrame
         javax.swing.JFrame frame = new javax.swing.JFrame("Configuración");
         frame.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        frame.setSize(500, 600); // Ajustar tamaño según el diseño
+        frame.setResizable(false); // Deshabilitar el ajuste del tamaño
         frame.add(configuracion); // Agregar el panel de Configuración al JFrame
+        frame.pack();
         frame.setVisible(true);
 
         // Opcional: Ocultar la ventana actual
@@ -202,6 +206,7 @@ public class MenuUsuario extends javax.swing.JFrame {
     private javax.swing.JButton Configuracion;
     private javax.swing.JButton Libros;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
