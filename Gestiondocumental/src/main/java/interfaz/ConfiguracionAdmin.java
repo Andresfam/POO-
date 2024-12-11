@@ -37,7 +37,7 @@ public class ConfiguracionAdmin extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CONFIGURACION");
 
-        setBackground(new java.awt.Color(0, 204, 153));
+        setBackground(new java.awt.Color(245, 134, 52));
 
         nickadministrador.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre de usuario"));
         nickadministrador.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +53,7 @@ public class ConfiguracionAdmin extends javax.swing.JPanel {
             }
         });
 
-        Aceptar.setBackground(new java.awt.Color(0, 204, 153));
+        Aceptar.setBackground(new java.awt.Color(245, 134, 52));
         Aceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Aceptar.setForeground(new java.awt.Color(255, 255, 255));
         Aceptar.setText("ACEPTAR");
@@ -63,7 +63,7 @@ public class ConfiguracionAdmin extends javax.swing.JPanel {
             }
         });
 
-        Atrasadmin.setBackground(new java.awt.Color(0, 204, 153));
+        Atrasadmin.setBackground(new java.awt.Color(245, 134, 52));
         Atrasadmin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Atrasadmin.setForeground(new java.awt.Color(255, 255, 255));
         Atrasadmin.setText("Atras");
