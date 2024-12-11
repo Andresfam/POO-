@@ -45,7 +45,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(245, 134, 52));
 
         jButton1.setText("Crear");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +68,7 @@ public class MenuAdmin extends javax.swing.JFrame {
             }
         });
 
-        Cerrarsesion.setBackground(new java.awt.Color(0, 153, 153));
+        Cerrarsesion.setBackground(new java.awt.Color(245, 134, 52));
         Cerrarsesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Cerrarsesion.setForeground(new java.awt.Color(204, 0, 0));
         Cerrarsesion.setText("Cerrar sesion");
