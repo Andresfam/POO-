@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -61,9 +62,10 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ARCHIVAPRO");
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 51));
+        jButton2.setBackground(new java.awt.Color(245, 134, 52));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Create account");
+        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -78,14 +80,14 @@ public class Login extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addGap(16, 16, 16))
+                .addGap(27, 27, 27))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2)
-                .addGap(179, 179, 179)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(39, 39, 39))
         );
@@ -189,24 +191,28 @@ public class Login extends javax.swing.JFrame {
         String username = jTextField3.getText();
         String password = new String(jPasswordField1.getPassword());
         
-        if (LoginSystem.authenticate(username, password)) {
-                String role = LoginSystem.getRole(username);
-                System.out.println("Login exitoso. Rol: " + role);
-                this.setVisible(false);
-                //abre la interfaz admin haces tu condicional para que reconozca cual es cual
-                if(role.equals("admin")){
-                    System.out.println(123);
-                    MenuAdmin objetomenuadmin = new MenuAdmin();
-                    objetomenuadmin.setVisible(true);
-                }
-                //abre la interfaz usuario haces tu condicional para que reconozca cual es cual
-                else{
-                    MenuUsuario objetomenuuser= new MenuUsuario();
-                    objetomenuuser.setVisible(true);
-                }
-            } else {
-                System.out.println("Usuario o contraseña incorrectos.");
+        if(username.equals("") || password.equals("")){
+            JOptionPane.showMessageDialog(null, "Campos requeridos.", "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            if (LoginSystem.authenticate(username, password)) {
+                    String role = LoginSystem.getRole(username);
+                    System.out.println("Login exitoso. Rol: " + role);
+                    this.setVisible(false);
+                    //abre la interfaz admin haces tu condicional para que reconozca cual es cual
+                    if(role.equals("admin")){
+                        MenuAdmin objetomenuadmin = new MenuAdmin();
+                        objetomenuadmin.setVisible(true);
+                    }
+                    //abre la interfaz usuario haces tu condicional para que reconozca cual es cual
+                    else{
+                        MenuUsuario objetomenuuser= new MenuUsuario();
+                        objetomenuuser.setVisible(true);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

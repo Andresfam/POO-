@@ -130,9 +130,9 @@ objverlibro.setVisible(true);
     }//GEN-LAST:event_LibrosActionPerformed
 
     private void ComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprarActionPerformed
-      this.dispose();
-comprarlibro objcomprarlibro = new comprarlibro();
-objcomprarlibro.setVisible(true);  // TODO add your handling code here:
+        this.dispose();
+        comprarlibro objcomprarlibro = new comprarlibro();
+        objcomprarlibro.setVisible(true);  // TODO add your handling code here:
     }//GEN-LAST:event_ComprarActionPerformed
 
     private void CerrarsesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarsesionActionPerformed
